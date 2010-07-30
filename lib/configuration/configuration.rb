@@ -14,12 +14,12 @@ module Capistrano
 
   class Configuration
 
-    attr_accessor :deploy_as
-    attr_accessor :scm
-    attr_accessor :stages
-    attr_accessor :default_stage
-    attr_accessor :environment_variable
-    attr_accessor :environment
+    lattr_accessor :deploy_as
+    lattr_accessor :scm
+    lattr_accessor :stages
+    lattr_accessor :default_stage
+    lattr_accessor :environment_variable
+    lattr_accessor :environment
     
     attr_accessor :color
 
@@ -36,10 +36,7 @@ module Capistrano
                                 }
                               end
       @color                = true
-    end
-
-    def environment
-      @environment.respond_to?(:call) ? @environment.call : @environment
+      
     end
 
   end
