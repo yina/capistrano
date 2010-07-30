@@ -11,4 +11,5 @@ end
 
 group :test do
   gem 'minitest', :require => false
+  gem 'redgreen'
 end

@@ -17,10 +17,13 @@ class TestDefaultConfiguration < MiniTest::Unit::TestCase
   def test_default_stage
     assert_equal 'production', @configuration.default_stage
   end
-  
 
-  # def test_that_it_doesnt_not_blend
-  #   refute_match /^no/i, @meme.does_it_blend?
-  # end
+  def test_default_environmental_variable
+    assert_equal 'RACK_ENV', @configuration.environment_variable
+  end
+  
+  def test_default_environmental_variable
+    assert_equal 'production', @configuration.environment['RACK_ENV']
+  end
   
 end
