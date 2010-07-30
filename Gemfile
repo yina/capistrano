@@ -2,6 +2,7 @@
 source :gemcutter
 
 group :runtime do
+  gem 'thor'
   gem 'net-ssh',          :require => 'net/ssh'
   gem 'net-ssh-multi',    :require => 'net/ssh/multi'
   gem 'net-ssh-gateway',  :require => 'net/ssh/gateway'

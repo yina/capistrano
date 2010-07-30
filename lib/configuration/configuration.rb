@@ -14,6 +14,10 @@ module Capistrano
 
   class Configuration
 
+    #
+    # These are lazy_evaluated, please
+    # see the documentation inline
+    #
     lattr_accessor :deploy_as
     lattr_accessor :scm
     lattr_accessor :stages
@@ -21,12 +25,15 @@ module Capistrano
     lattr_accessor :environment_variable
     lattr_accessor :environment
     
+    # This doesn't need to be lazy-evaluated, 
+    # as Highline takes care of that when using
+    # a function that might require color.
     attr_accessor :color
 
     def initialize
       @deploy_as            = Etc.getlogin
       @scm                  = ::Capistrano::Scm::Git
-      @stages               = Set.new(%w(production staging))
+      @stages               = Set.new(['production', 'staging'])
       @default_stage        = 'production'
       @environment_variable = 'RACK_ENV'
       @environment          = lambda do

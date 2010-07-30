@@ -6,8 +6,6 @@ require 'minitest/unit'
 # require 'minitest/mock'
 require 'mocha'
 
-Dir.glob(File.dirname(__FILE__) + '/../lib/**/*.rb') do |file|
-  require file
-end
+require File.dirname(__FILE__) + '/../lib/capistrano'
 
 MiniTest::Unit.autorun
