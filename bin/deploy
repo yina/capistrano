@@ -1,0 +1,2 @@
+require 'cli/base'
+Capistrano::Cli::Base.start(ARGV)

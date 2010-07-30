@@ -1,3 +1,8 @@
+require "rubygems"
+require "bundler"
+Bundler.setup(:runtime)
+Bundler.include(:runtime)
+
 # Lazy attribute accessor helper
 require 'helpers/path_for_executable'
 require 'helpers/lazy_attr_accessor'
