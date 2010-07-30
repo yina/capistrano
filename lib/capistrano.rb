@@ -22,10 +22,7 @@ module Capistrano
       @stages        = Set.new(%w(production staging))
       @default_stage = 'production'
     end
-
-    
         
   end
-  
   
 end
