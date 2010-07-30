@@ -29,6 +29,7 @@ module Capistrano
     # as Highline takes care of that when using
     # a function that might require color.
     attr_accessor :color
+    attr_accessor :executables
 
     def initialize
       @deploy_as            = Etc.getlogin
@@ -43,7 +44,6 @@ module Capistrano
                                 }
                               end
       @color                = true
-      
     end
 
   end

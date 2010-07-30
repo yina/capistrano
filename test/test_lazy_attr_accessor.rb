@@ -1,5 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/helper')
 
+# Ensure that we can run the tests instead of exploding
+# before we are even in test-land!
 if Object.respond_to?(:lattr_accessor)
   class LazyAttrAccessorTestClass
     lattr_accessor :test_accessor
@@ -25,6 +27,5 @@ class TestLazyAttrAccessor < MiniTest::Unit::TestCase
     @laatc.test_accessor = lambda { 'test value from lambda' }
     assert_equal 'test value from lambda', @laatc.test_accessor
   end
-
 
 end
