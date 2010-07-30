@@ -12,6 +12,30 @@ module Capistrano
     yield(configuration)
   end
 
+  module Actions
+    
+    class << self 
+      attr_accessor :configuration
+    end
+    
+    def self.configure
+      self.configuration ||= ::Capistrano::Actions::Configuration.new
+    end
+    
+    class Configuration
+      
+      attr_accessor :before_run
+      attr_accessor :after_run
+      
+      def initialize
+        @before_run = nil
+        @after_run  = nil
+      end
+      
+    end
+    
+  end
+
   class Configuration
 
     #

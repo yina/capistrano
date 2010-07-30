@@ -44,4 +44,8 @@ class TestDefaultConfiguration < MiniTest::Unit::TestCase
     assert_equal '/usr/bin:/bin:/usr/sbin', @configuration.environment['PATH']
   end
   
+  def test_actions_configuration
+    @action_configuration = ::Capistrano::Actions::Configuration.new
+  end
+  
 end
