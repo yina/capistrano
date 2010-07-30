@@ -44,6 +44,7 @@ module Capistrano
                                 }
                               end
       @color                = true
+      @executables          = Hash.new
     end
 
   end
