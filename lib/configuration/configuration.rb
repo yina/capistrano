@@ -48,6 +48,7 @@ module Capistrano
     lattr_accessor :default_stage
     lattr_accessor :environment_variable
     lattr_accessor :environment
+    lattr_accessor :shell
     
     # This doesn't need to be lazy-evaluated, 
     # as Highline takes care of that when using
@@ -69,6 +70,7 @@ module Capistrano
                               end
       @color                = true
       @executables          = Hash.new
+      @shell                = '/bin/sh'
     end
 
   end
