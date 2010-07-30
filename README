@@ -1,0 +1,8 @@
+# Capistrano Version 3.0
+
+This `README` is just here to tease anyone that looks too closely... Capistrano 3.0 is in the works.
+
+I'm adding a `README` now to warn people that there will be catastrophic api changes that will break all plugins.
+
+The reasons for all will become clear in time, however in the meantime don't worry about your deployments, you'll notice here on this branch is no `capistrano.gemspec`, and thus no gem release planned yet.
+
