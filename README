@@ -6,3 +6,4 @@ I'm adding a `README` now to warn people that there will be catastrophic api cha
 
 The reasons for all will become clear in time, however in the meantime don't worry about your deployments, you'll notice here on this branch is no `capistrano.gemspec`, and thus no gem release planned yet.
 
+* SSH options have been removed, as they were bloat; and we will honor the settings in ~/.ssh/config as per always

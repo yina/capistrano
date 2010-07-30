@@ -26,4 +26,17 @@ class TestDefaultConfiguration < MiniTest::Unit::TestCase
     assert_equal 'production', @configuration.environment['RACK_ENV']
   end
   
+  def test_color_configuration
+    assert_equal true, @configuration.color
+  end
+  
+  def test_changing_the_environment_variable_changes_the_environment_hash
+    @configuration.environment_variable = 'TEST_ENV'
+    assert_equal 'production', @configuration.environment['TEST_ENV']
+  end
+  
+  def test_forcing_the_path_to_the_smallest_possible
+    assert_equal '/usr/bin:/bin:/usr/sbin', @configuration.environment['PATH']
+  end
+  
 end
