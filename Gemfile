@@ -13,5 +13,6 @@ end
 group :test do
   gem 'minitest', :require => false
   gem 'redgreen'
+  gem 'ruby-debug19'
   gem 'mocha'
 end

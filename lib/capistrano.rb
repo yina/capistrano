@@ -3,11 +3,11 @@ require "bundler"
 Bundler.setup(:runtime)
 
 # Lazy attribute accessor helper
-require 'helpers/path_for_executable'
-require 'helpers/lazy_attr_accessor'
+require 'capistrano/helpers/path_for_executable'
+require 'capistrano/helpers/lazy_attr_accessor'
 
 # Source control modules
-require 'scm/git'
+require 'capistrano/scm/git'
 
 # Finally the config class
-require 'configuration/configuration'
+require 'capistrano/configuration/configuration'

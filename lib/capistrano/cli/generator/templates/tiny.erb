@@ -1,0 +1,23 @@
+
+# Just one server (must be enumerable anyway)
+servers = ['example.com']
+
+# Configure the application
+# for help see documentation for `lib/capistrano/configuration.rb`
+Capistrano.configure do |c|
+  c.deploy_as         = 'deploy'
+  c.application_name  = 'example.com'
+  c.target_directory  = '/var/www/sites-available/'
+end
+
+class Deployment
+  
+  include Capistrano::DeploymentStrategies::Tiny
+  
+  # include Capistrano::DeploymentMixins::Unicorn
+  # include Capistrano::DeploymentMixins::Nginx
+  # include Capistrano::DeploymentMixins::Rails::ActiveRecordMigrations
+  # include Capistrano::DeploymentMixins::SunspotRails
+  # include Capistrano::DeploymentMixins::SunspotRails
+  
+end

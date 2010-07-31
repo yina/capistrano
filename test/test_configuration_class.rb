@@ -3,12 +3,12 @@ require File.expand_path(File.dirname(__FILE__) + '/helper')
 class TestDefaultConfiguration < MiniTest::Unit::TestCase
 
   def setup
+    Etc.stubs(:getlogin).returns('exampleuser')
     @configuration = ::Capistrano::Configuration.new
   end
 
   def test_deploy_as_defaults_to_the_current_user
-    Etc.stubs(:getlogin).returns('exampleuser')
-    assert_equal 'leehambley', @configuration.deploy_as
+    assert_equal 'exampleuser', @configuration.deploy_as
   end
 
   def test_default_scm_is_git
@@ -48,10 +48,27 @@ class TestDefaultConfiguration < MiniTest::Unit::TestCase
     assert_equal '/bin/sh', @configuration.shell
   end
   
-  def test_actions_configuration
-    @action_configuration = ::Capistrano::Actions::Configuration.new
+  def test_deploy_to_default
+    assert_equal '"/u/apps/example.com/"', @configuration.target_directory
   end
   
+  def test_application_name_default
+    assert_equal 'example.com', @configuration.application_name
+  end
   
+  def test_changing_application_name_correctly_defers_evaluation
+    @configuration.application_name = 'test.com'
+    assert_equal '"/u/apps/test.com/"', @configuration.target_directory
+  end
+  
+  def test_default_repository_configuration
+    assert_equal 'git://github.com/exampleuser/example.com.git', @configuration.repository
+  end
+  
+  def test_deferred_repository_configuration
+    @configuration.application_name = 'test.com'
+    @configuration.deploy_as        = 'tester'
+    assert_equal 'git://github.com/tester/test.com.git', @configuration.repository
+  end
   
 end

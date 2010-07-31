@@ -49,6 +49,9 @@ module Capistrano
     lattr_accessor :environment_variable
     lattr_accessor :environment
     lattr_accessor :shell
+    lattr_accessor :target_directory
+    lattr_accessor :application_name
+    lattr_accessor :repository
     
     # This doesn't need to be lazy-evaluated, 
     # as Highline takes care of that when using
@@ -57,15 +60,18 @@ module Capistrano
     attr_accessor :executables
 
     def initialize
+      @application_name     = 'example.com'
+      @target_directory     = lambda { "\"/u/apps/#{application_name}/\"" } 
       @deploy_as            = Etc.getlogin
       @scm                  = ::Capistrano::Scm::Git
+      @repository           = lambda { "git://github.com/#{deploy_as}/#{application_name}.git" }
       @stages               = Set.new(['production', 'staging'])
       @default_stage        = 'production'
       @environment_variable = 'RACK_ENV'
       @environment          = lambda do
                                 { 
-                                  @environment_variable => 'production',
-                                  'PATH'                => '/usr/bin:/bin:/usr/sbin'
+                                  environment_variable => 'production',
+                                  'PATH'               => '/usr/bin:/bin:/usr/sbin'
                                 }
                               end
       @color                = true

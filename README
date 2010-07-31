@@ -1,4 +1,5 @@
 # Capistrano Version 3.0
+## (aka CapistranoRb 1.0)
 
 This `README` is just here to tease anyone that looks too closely... Capistrano 3.0 is in the works.
 
@@ -6,4 +7,25 @@ I'm adding a `README` now to warn people that there will be catastrophic api cha
 
 The reasons for all will become clear in time, however in the meantime don't worry about your deployments, you'll notice here on this branch is no `capistrano.gemspec`, and thus no gem release planned yet.
 
-* SSH options have been removed, as they were bloat; and we will honor the settings in ~/.ssh/config as per always
+## Capistrano is still opinionated software
+
+Therefore, we assume these rules:
+
+ * You can deploy without `root`.
+ * You are using source control software (that's right :none isn't an option)
+ * You can perform all required operations without passwords.
+ * Your server can reach, and read the source repository.
+
+## What's changed
+
+ * The project name is officially becoming `capistranorb`. As the project was
+  named after a politically significant town in California, as a maintainer looking for anything tagged `capistrano` on google runs a lot of spam. In future please use the new mailing list, the new wiki and pages at Github, and see the yardocs at http://yardoc.org/docs/capistranorb 
+ * No more `cap` - binary is now called `deploy`.
+ * The `cold` deploy concept is gone, all deploys should be repeatable.
+ * The `capify` executable now has a bunch of options and will copy re-usable,
+   extensible, and modifiable configurations into your app.
+ * Massive configuration api changes (now works in a way that can be rdocumented.).
+ * The concept of server() and role() for creating instances of servers are 
+   gone (simplified)
+ * Better support for setting a custom environment on the server.
+ * SSH options have been removed, as they were bloat; and we will honour the settings in ~/.ssh/config as per always

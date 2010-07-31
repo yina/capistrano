@@ -1,3 +1,5 @@
+require 'thor'
+
 module Capistrano
   
   module Cli
@@ -9,7 +11,7 @@ module Capistrano
       class_option :stage, :type => :string, :alias => '-s', :required => false, :default => nil, :desc => 'The deployment stage to use (Default is nil, which defers to ::Capistrano::Configuration.default_stage)'
       class_option :deploy_file, :type => :string, :alias => '-c', :required => false, :default => nil, :desc => 'The deployment file to use, defaults to looking for ./config/deploy.rb'
       
-      desc "Deploy the application"
+      desc "deploy", "Deploy the application"
       def deploy
         
       end
