@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/helper')
+require File.expand_path(File.dirname(__FILE__) + '/../helper')
 
 # Ensure that we can run the tests instead of exploding
 # before we are even in test-land!

@@ -13,7 +13,10 @@ end
 group :test do
   gem 'rake', '>= 0.8.7'
   gem 'minitest', :require => false
-  gem 'redgreen'
-  # gem 'ruby-debug19'
+  if RUBY_VERSION =~ /^1\.9/
+    gem "ruby-debug19", :require => 'ruby-debug'
+  else
+    gem "ruby-debug"
+  end
   gem 'mocha'
 end

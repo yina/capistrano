@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/helper')
+require File.expand_path(File.dirname(__FILE__) + '/../helper')
 
 class TestGeneratorBase < MiniTest::Unit::TestCase
   
@@ -9,6 +9,7 @@ class TestGeneratorBase < MiniTest::Unit::TestCase
   
   def test_banner_if_starting_generator_with_no_args
     Capistrano::Cli::Generator.start(@no_shell_args)
+    skip "Not implemented yet"
   end
   
 end
