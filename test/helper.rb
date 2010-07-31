@@ -5,7 +5,7 @@ Bundler.setup(:test, :runtime)
 require 'minitest/unit'
 # require 'minitest/mock'
 require 'mocha'
-require 'ruby-debug'
+# require 'ruby-debug'
 
 # Push lib path onto the load path, makes the requires look 
 # like how they would in the wild.

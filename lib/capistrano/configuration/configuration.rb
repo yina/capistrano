@@ -63,7 +63,7 @@ module Capistrano
       @application_name     = 'example.com'
       @target_directory     = lambda { "\"/u/apps/#{application_name}/\"" } 
       @deploy_as            = Etc.getlogin
-      @scm                  = ::Capistrano::Scm::Git
+      @scm                  = nil
       @repository           = lambda { "git://github.com/#{deploy_as}/#{application_name}.git" }
       @stages               = Set.new(['production', 'staging'])
       @default_stage        = 'production'

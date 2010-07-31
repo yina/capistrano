@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/helper')
 
-class TestDefaultConfiguration < MiniTest::Unit::TestCase
+class TestConfiguration < MiniTest::Unit::TestCase
 
   def setup
     Etc.stubs(:getlogin).returns('exampleuser')

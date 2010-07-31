@@ -11,8 +11,9 @@ group :runtime do
 end
 
 group :test do
+  gem 'rake', '>= 0.8.7'
   gem 'minitest', :require => false
   gem 'redgreen'
-  gem 'ruby-debug19'
+  # gem 'ruby-debug19'
   gem 'mocha'
 end

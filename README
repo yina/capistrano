@@ -3,9 +3,23 @@
 
 This `README` is just here to tease anyone that looks too closely... Capistrano 3.0 is in the works.
 
-I'm adding a `README` now to warn people that there will be catastrophic api changes that will break all plugins.
+I'm adding a `README` now to warn people that there will be catastrophic API changes that will break *all* plugins and utilities. I'm really sorry, but we need a clean break, and this is the only way!
 
 The reasons for all will become clear in time, however in the meantime don't worry about your deployments, you'll notice here on this branch is no `capistrano.gemspec`, and thus no gem release planned yet.
+
+When the gem release lands, the `capify` executable will remain (but is now a fully fledged generator), and the `cap` executable is now called `deploy`. For anyone wanting to run arbitrary tasks on their machines, the methods used in `deploy` are exposed in such a way that you can embed them in your own tasks.
+
+To that end, a `cap` executable may come back to facilitate that. (but beware that it will be considered separate to `deploy`).
+
+## Example Workflow
+
+    # padrino-gen project myproject
+    # 
+Whichever suits your needs...
+
+    cd myproject
+    capify . --tiny
+    deploy
 
 ## Capistrano is still opinionated software
 
@@ -19,13 +33,24 @@ Therefore, we assume these rules:
 ## What's changed
 
  * The project name is officially becoming `capistranorb`. As the project was
-  named after a politically significant town in California, as a maintainer looking for anything tagged `capistrano` on google runs a lot of spam. In future please use the new mailing list, the new wiki and pages at Github, and see the yardocs at http://yardoc.org/docs/capistranorb 
+  named after a politically, and ecologically significant town in California, as a maintainer looking for anything tagged `capistrano` on google runs a lot of spam. In future please use the new mailing list, the new wiki and pages at Github, and see the yardocs at http://yardoc.org/docs/capistranorb 
+  
  * No more `cap` - binary is now called `deploy`.
- * The `cold` deploy concept is gone, all deploys should be repeatable.
+
+ * No more `setup` - this is a tool for deployment. Assuming that your users can work on the server, then a deploy will be consistently replicable.  
+ 
+ * The `cold` deploy concept is gone, all deploys should be repeatable (See note above).
+ 
  * The `capify` executable now has a bunch of options and will copy re-usable,
    extensible, and modifiable configurations into your app.
- * Massive configuration api changes (now works in a way that can be rdocumented.).
+   
+ * Massive configuration API changes (now works in a way that can be rdocumented.).
+
  * The concept of server() and role() for creating instances of servers are 
-   gone (simplified)
- * Better support for setting a custom environment on the server.
+   gone (simplified) - we now simply use Enumerable lists to connect to anything that we can resolve.
+
+ * Better support for setting a custom environment on the server. (For the likes of bundler, and rvm)
+ 
+ * It is expected that you will enter the 
+
  * SSH options have been removed, as they were bloat; and we will honour the settings in ~/.ssh/config as per always

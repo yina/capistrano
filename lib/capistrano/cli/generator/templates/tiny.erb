@@ -1,4 +1,3 @@
-
 # Just one server (must be enumerable anyway)
 servers = ['example.com']
 
@@ -8,6 +7,11 @@ Capistrano.configure do |c|
   c.deploy_as         = 'deploy'
   c.application_name  = 'example.com'
   c.target_directory  = '/var/www/sites-available/'
+  c.executables       = {
+    'rake'    => '/home/deploy/.rvm/gems/ruby-1.9.2-rc2/bin/rake',
+    'bundler' => '/home/deploy/.rvm/gems/ruby-1.9.2-rc2/bin/bundler',
+    'ruby'    => '/home/deploy/.rvm/gems/ruby-1.9.2-rc2/bin/ruby'
+  }
 end
 
 class Deployment
