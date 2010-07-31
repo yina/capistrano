@@ -12,7 +12,7 @@ require 'mocha'
 $LOAD_PATH.push File.dirname(__FILE__) + '/../lib/'
 
 require 'capistrano'
-# require 'capistrano/cli/base'
-# require 'capistrano/cli/generator'
+require 'capistrano/cli/base'
+require 'capistrano/cli/generator'
 
 MiniTest::Unit.autorun
