@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/helper')
 
-class TestPathForExecutableHelper < MiniTest::Unit::TestCase
+class TestPathForExecutable < MiniTest::Unit::TestCase
   
   def setup
     Capistrano.configure do |config|

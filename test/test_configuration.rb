@@ -11,8 +11,8 @@ class TestConfiguration < MiniTest::Unit::TestCase
     assert_equal 'exampleuser', @configuration.deploy_as
   end
 
-  def test_default_scm_is_git
-    assert_equal ::Capistrano::Scm::Git, @configuration.scm
+  def test_default_scm_is_nil
+    assert_equal nil, @configuration.scm
   end
 
   def test_known_stages
