@@ -8,7 +8,7 @@ module Capistrano
    
       include Thor::Actions
    
-      default_task :generate
+      default_task :help
       
       class_option :tiny, :type => :boolean, :required => false, :default => nil, :desc => 'If present will generate a `tiny` deployment script, assuming the bare minimum to get by'
       
@@ -16,7 +16,7 @@ module Capistrano
       def generate
         
       end
-      
+            
     end
     
   end

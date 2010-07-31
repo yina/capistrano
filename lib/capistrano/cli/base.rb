@@ -15,7 +15,7 @@ module Capistrano
       def deploy
         
       end
-      
+  
     end
     
   end

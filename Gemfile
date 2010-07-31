@@ -12,7 +12,7 @@ end
 
 group :test do
   gem 'rake', '>= 0.8.7'
-  gem 'minitest', :require => false
+  gem 'minitest', :require => 'minitest/unit'
   if RUBY_VERSION =~ /^1\.9/
     gem "ruby-debug19", :require => 'ruby-debug'
   else
