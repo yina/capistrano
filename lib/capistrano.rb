@@ -13,7 +13,7 @@ require 'capistrano/actions/when'
 require 'capistrano/helpers/path_for_executable'
 require 'capistrano/helpers/lazy_attr_accessor'
 
-# Source control modules
+# Source control modules
 require 'capistrano/scm/git'
 
 # Finally the config class
