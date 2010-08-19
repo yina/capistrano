@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../helper')
 class TestPathForExecutable < MiniTest::Unit::TestCase
   
   def setup
-    Capistrano.configure do |config|
+    ::Capistrano.configure do |config|
       config.executables['rake'] = '/usr/local/bin/rake'
     end
   end

@@ -9,7 +9,7 @@ class TestGeneratorBase < MiniTest::Unit::TestCase
   
   def test_banner_if_starting_generator_with_no_args
     stdout, stderr = capture_io {
-      Capistrano::Cli::Generator.start(@no_shell_args)
+      ::Capistrano::Cli::Generator.start(@no_shell_args)
     }
     assert_match stdout, /generate\s+\#/
     assert_equal "", stderr

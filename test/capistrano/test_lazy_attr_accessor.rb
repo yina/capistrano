@@ -2,7 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../helper')
 
 # Ensure that we can run the tests instead of exploding
 # before we are even in test-land!
-if Object.respond_to?(:lattr_accessor)
+if ::Object.respond_to?(:lattr_accessor)
   class LazyAttrAccessorTestClass
     lattr_accessor :test_accessor
   end
@@ -11,7 +11,7 @@ end
 class TestLazyAttrAccessor < MiniTest::Unit::TestCase
 
   def setup
-    @laatc = LazyAttrAccessorTestClass.new
+    @laatc = ::LazyAttrAccessorTestClass.new
   end
 
   def test_default

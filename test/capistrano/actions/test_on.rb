@@ -19,7 +19,19 @@ class TestActionOn < MiniTest::Unit::TestCase
 
   def test_on_requires_a_block
     assert_raises ArgumentError do
-      on(%w{example.com}, {})
+      on(%w{example.com}, {}, nil)
+    end
+  end
+
+  def test_the_block_should_have_the_current_host_name_when_exexuted
+    on(%{example.com}, {}) do |host|
+      
+    end
+  end
+
+  def test_if_the_block_raises_an_exception_host_list_should_be_cleared
+    on(%{example.com}, {}) do
+      raise RuntimeError, "something bad happened here"
     end
   end
   

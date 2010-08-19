@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../helper')
 class TestConfiguration < MiniTest::Unit::TestCase
 
   def setup
-    Etc.stubs(:getlogin).returns('exampleuser')
+    ::Etc.stubs(:getlogin).returns('exampleuser')
     @configuration = ::Capistrano::Configuration.new
   end
 
@@ -16,7 +16,7 @@ class TestConfiguration < MiniTest::Unit::TestCase
   end
 
   def test_known_stages
-    assert_equal Set.new(%w(staging production)), @configuration.stages
+    assert_equal ::Set.new(%w(staging production)), @configuration.stages
   end
 
   def test_default_stage
