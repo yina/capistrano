@@ -24,13 +24,13 @@ class TestActionOn < MiniTest::Unit::TestCase
   end
 
   def test_the_block_should_have_the_current_host_name_when_exexuted
-    on(%{example.com}, {}) do |host|
+    on(%w{example.com}, {}) do |host|
       
     end
   end
 
   def test_if_the_block_raises_an_exception_host_list_should_be_cleared
-    on(%{example.com}, {}) do
+    on(%w{example.com}, {}) do
       raise RuntimeError, "something bad happened here"
     end
   end

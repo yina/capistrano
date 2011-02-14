@@ -13,6 +13,9 @@ require 'capistrano/actions/when'
 require 'capistrano/helpers/path_for_executable'
 require 'capistrano/helpers/lazy_attr_accessor'
 
+# Logging class
+require 'capistrano/helpers/logger'
+
 # Source control modules
 require 'capistrano/scm/git'
 
