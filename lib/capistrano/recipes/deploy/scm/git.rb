@@ -194,6 +194,8 @@ module Capistrano
           # example, a submodule that has subsequently been removed).
           execute << "#{git} clean #{verbose} -d -x -f"
 
+          execute << "warble"
+
           execute.join(" && ")
         end
 
