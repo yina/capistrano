@@ -1,6 +1,6 @@
 ## Capistrano
 
-This capistrano fork adds code to deploy jruby. The fork utilizes deploy_via copy to extract a copy
+This yina/capistrano.git fork adds code to deploy jruby. The fork utilizes deploy_via copy to extract a copy
 of the source code, warble, compress, and then deploy.
 
 Capistrano is a utility and framework for executing commands in parallel on multiple remote machines, via SSH. It uses a simple DSL (borrowed in part from Rake, [[http://rake.rubyforge.org/]]) that allows you to define _tasks_, which may be applied to machines in certain roles. It also supports tunneling connections via some gateway machine to allow operations to be performed behind VPN's and firewalls.
