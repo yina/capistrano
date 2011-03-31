@@ -151,6 +151,8 @@ module Capistrano
             execute << "#{git} submodule #{verbose} update --recursive"
           end
 
+          execute << "warble"
+
           execute.join(" && ")
         end
         
@@ -193,8 +195,6 @@ module Capistrano
           # Make sure there's nothing else lying around in the repository (for
           # example, a submodule that has subsequently been removed).
           execute << "#{git} clean #{verbose} -d -x -f"
-
-          execute << "warble"
 
           execute.join(" && ")
         end
